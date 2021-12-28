@@ -1,0 +1,16 @@
+{
+  "name": "@artevelde-uas/canvas-lms-better-left-menu-plugin",
+  "description": "Adds several options to improve the left menu",
+  "keywords": [
+    "Canvas LMS"
+  ],
+  "author": "Renaat De Muynck <renaat.demuynck@arteveldehs.be>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artevelde-uas/canvas-lms-better-left-menu-plugin.git"
+  },
+  "module": "src/index.js",
+  "files": [
+    "src/"
+  ]
+}
