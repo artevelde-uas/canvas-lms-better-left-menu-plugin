@@ -3,7 +3,7 @@ import { dom } from '@artevelde-uas/canvas-lms-app';
 import styles from './index.module.css';
 
 
-export default async function ({ hideScrollbar }) {
+export default async function ({ hideScrollbar, resetOnScroll }) {
     const stickyFrame = await dom.onElementReady('.ic-sticky-frame');
 
     if (hideScrollbar) {
@@ -14,6 +14,10 @@ export default async function ({ hideScrollbar }) {
         const height = Math.floor(document.documentElement.clientHeight - stickyFrame.getBoundingClientRect().top);
 
         stickyFrame.style.height = `${height}px`;
+
+        if (resetOnScroll) {
+            stickyFrame.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     }
 
     dom.onClassAdded(document.body, 'course-menu-expanded', () => {
