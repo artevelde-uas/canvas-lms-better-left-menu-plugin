@@ -10,18 +10,18 @@ export default async function ({ hideScrollbar, resetOnScroll }) {
         stickyFrame.classList.add(styles.hideScrollbar);
     }
 
-    function setHeight() {
+    function setHeight(smooth = true) {
         const height = Math.floor(document.documentElement.clientHeight - stickyFrame.getBoundingClientRect().top);
 
         stickyFrame.style.height = `${height}px`;
 
         if (resetOnScroll) {
-            stickyFrame.scrollTo({ top: 0, behavior: 'smooth' });
+            stickyFrame.scrollTo({ top: 0, behavior: smooth ? 'smooth': 'auto' });
         }
     }
 
     dom.onClassAdded(document.body, 'course-menu-expanded', () => {
-        setHeight();
+        setHeight(false);
 
         window.addEventListener('resize', setHeight);
         document.addEventListener('scroll', setHeight);
