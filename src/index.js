@@ -20,15 +20,19 @@ export default async function ({ hideScrollbar, resetOnScroll }) {
         }
     }
 
-    dom.onClassAdded(document.body, 'course-menu-expanded', () => {
+    dom.onClassAdded(document.body, () => {
         setHeight(false);
 
         window.addEventListener('resize', setHeight);
         document.addEventListener('scroll', setHeight);
+    }, {
+        filter: 'course-menu-expanded'
     });
 
-    dom.onClassRemoved(document.body, 'course-menu-expanded', () => {
+    dom.onClassRemoved(document.body, () => {
         window.removeEventListener('resize', setHeight);
         document.removeEventListener('scroll', setHeight);
+    }, {
+        filter: 'course-menu-expanded'
     });
 }
