@@ -1,0 +1,12 @@
+:global .ic-sticky-frame {
+
+  /* Hide the scrollbar but keep scroll behavior */
+  &:local(.hide-scrollbar) {
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

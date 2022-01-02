@@ -1,8 +1,14 @@
 import { dom } from '@artevelde-uas/canvas-lms-app';
 
+import styles from './index.module.css';
 
-export default async function () {
+
+export default async function ({ hideScrollbar }) {
     const stickyFrame = await dom.onElementReady('.ic-sticky-frame');
+
+    if (hideScrollbar) {
+        stickyFrame.classList.add(styles.hideScrollbar);
+    }
 
     function setHeight() {
         const height = Math.floor(document.documentElement.clientHeight - stickyFrame.getBoundingClientRect().top);
