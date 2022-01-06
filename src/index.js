@@ -3,8 +3,13 @@ import { dom } from '@artevelde-uas/canvas-lms-app';
 import styles from './index.module.css';
 
 
-export default async function ({ hideScrollbar, resetOnScroll }) {
+export default async function ({ classicStyles, hideScrollbar, resetOnScroll }) {
     const stickyContainer = await dom.onElementReady('#sticky-container');
+
+    // Use the classic menu styles
+    if (classicStyles) {
+        stickyContainer.classList.add(styles.classicStyles);
+    }
 
     if (hideScrollbar) {
         stickyContainer.classList.add(styles.hideScrollbar);
