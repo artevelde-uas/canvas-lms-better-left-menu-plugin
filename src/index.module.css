@@ -1,4 +1,6 @@
 :global #sticky-container {
+  padding-bottom: 24px;
+
   /* Use a thin scrollbar */
   &:local(.thin-scrollbar) {
     scrollbar-width: thin;
