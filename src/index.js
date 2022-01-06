@@ -32,6 +32,7 @@ export default async function ({
         stickyContainer.classList.add(styles.hoverScrollbar);
     }
 
+    /** Sets the correct height of the left menu based on current document scroll position */
     function setHeight(smooth = true) {
         const height = Math.floor(document.documentElement.clientHeight - stickyContainer.getBoundingClientRect().top);
 
@@ -42,15 +43,17 @@ export default async function ({
         }
     }
 
+    // Apply the behavior when the menu becomes visible
     dom.onClassAdded(document.body, () => {
         setHeight(false);
-
+        
         window.addEventListener('resize', setHeight);
         document.addEventListener('scroll', setHeight);
     }, {
         filter: 'course-menu-expanded'
     });
-
+    
+    // Stop the behavior when the menu is collapsed
     dom.onClassRemoved(document.body, () => {
         window.removeEventListener('resize', setHeight);
         document.removeEventListener('scroll', setHeight);
