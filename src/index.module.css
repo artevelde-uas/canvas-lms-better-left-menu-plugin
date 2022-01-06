@@ -10,6 +10,28 @@
     }
   }
 
+  /* Show scrollbar on hover */
+  &:local(.hover-scrollbar) {
+    overflow-y: auto;
+    scrollbar-color: transparent transparent;
+
+    &:hover {
+      scrollbar-color: revert;
+    }
+
+    &:not(:hover) {
+      &::-webkit-scrollbar {
+        width: auto;
+        height: auto;
+      }
+
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+    }
+  }
+
   /* Use the classic menu styles */
   &:local(.classic-styles) > nav > ul > li > a {
     position: relative;

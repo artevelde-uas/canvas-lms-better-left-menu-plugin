@@ -3,16 +3,23 @@ import { dom } from '@artevelde-uas/canvas-lms-app';
 import styles from './index.module.css';
 
 
-export default async function ({ classicStyles, hideScrollbar, resetOnScroll }) {
+export default async function ({ classicStyles, showScrollbar, resetOnScroll }) {
     const stickyContainer = await dom.onElementReady('#sticky-container');
 
     // Use the classic menu styles
     if (classicStyles) {
         stickyContainer.classList.add(styles.classicStyles);
     }
-
-    if (hideScrollbar) {
+    
+    // Hide the scrollbar but keep scroll behavior
+    if (showScrollbar === false) {
         stickyContainer.classList.add(styles.hideScrollbar);
+        stickyContainer.classList.remove('has-scrollbar');
+    }
+    
+    // Show scrollbar on hover
+    if (showScrollbar === 'hover') {
+        stickyContainer.classList.add(styles.hoverScrollbar);
     }
 
     function setHeight(smooth = true) {
@@ -21,7 +28,7 @@ export default async function ({ classicStyles, hideScrollbar, resetOnScroll }) 
         stickyContainer.style.height = `${height}px`;
 
         if (resetOnScroll) {
-            stickyContainer.scrollTo({ top: 0, behavior: smooth ? 'smooth': 'auto' });
+            stickyContainer.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
         }
     }
 
