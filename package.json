@@ -1,5 +1,6 @@
 {
   "name": "@artevelde-uas/canvas-lms-better-left-menu-plugin",
+  "version": "1.0.0",
   "description": "Adds several options to improve the left menu",
   "keywords": [
     "Canvas LMS"
