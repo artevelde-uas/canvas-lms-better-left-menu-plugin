@@ -1,4 +1,23 @@
 :global #sticky-container {
+  /* Use a thin scrollbar */
+  &:local(.thin-scrollbar) {
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #dddddd;
+      background-color: ThreeDHighlight;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #c0c0c0;
+      background-color: ThreeDFace;
+    }
+  }
 
   /* Hide the scrollbar but keep scroll behavior */
   &:local(.hide-scrollbar) {
@@ -20,7 +39,7 @@
     }
 
     &:not(:hover) {
-      &::-webkit-scrollbar {
+      &:not(:local(.thin-scrollbar))::-webkit-scrollbar {
         width: auto;
         height: auto;
       }

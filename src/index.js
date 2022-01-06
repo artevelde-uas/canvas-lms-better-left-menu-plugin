@@ -5,11 +5,17 @@ import styles from './index.module.css';
 
 export default async function ({
     showScrollbar = true,
+    thinScrollbar = false,
     classicStyles = false,
     resetOnScroll = false
 }) {
     const stickyContainer = await dom.onElementReady('#sticky-container');
 
+    // Use a thin scrollbar
+    if (thinScrollbar) {
+        stickyContainer.classList.add(styles.thinScrollbar);
+    }
+    
     // Use the classic menu styles
     if (classicStyles) {
         stickyContainer.classList.add(styles.classicStyles);
