@@ -1,4 +1,4 @@
-:global .ic-sticky-frame {
+:global #sticky-container {
 
   /* Hide the scrollbar but keep scroll behavior */
   &:local(.hide-scrollbar) {

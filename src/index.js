@@ -4,19 +4,19 @@ import styles from './index.module.css';
 
 
 export default async function ({ hideScrollbar, resetOnScroll }) {
-    const stickyFrame = await dom.onElementReady('.ic-sticky-frame');
+    const stickyContainer = await dom.onElementReady('#sticky-container');
 
     if (hideScrollbar) {
-        stickyFrame.classList.add(styles.hideScrollbar);
+        stickyContainer.classList.add(styles.hideScrollbar);
     }
 
     function setHeight(smooth = true) {
-        const height = Math.floor(document.documentElement.clientHeight - stickyFrame.getBoundingClientRect().top);
+        const height = Math.floor(document.documentElement.clientHeight - stickyContainer.getBoundingClientRect().top);
 
-        stickyFrame.style.height = `${height}px`;
+        stickyContainer.style.height = `${height}px`;
 
         if (resetOnScroll) {
-            stickyFrame.scrollTo({ top: 0, behavior: smooth ? 'smooth': 'auto' });
+            stickyContainer.scrollTo({ top: 0, behavior: smooth ? 'smooth': 'auto' });
         }
     }
 
