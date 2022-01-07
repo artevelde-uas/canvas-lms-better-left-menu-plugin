@@ -57,10 +57,12 @@
   &:local(.classic-styles) > nav > ul > li > a {
     position: relative;
     padding: 8px 6px;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out;
 
     &:hover {
       text-decoration: none !important;
+      color: var(--ic-brand-font-color-dark);
       background-color: #e8e8e8;
     }
 
