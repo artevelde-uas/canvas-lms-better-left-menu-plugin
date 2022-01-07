@@ -1,0 +1,93 @@
+:global #sticky-container {
+  padding-bottom: 24px;
+
+  /* Use a thin scrollbar */
+  &:local(.thin-scrollbar) {
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #dddddd;
+      background-color: ThreeDHighlight;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #c0c0c0;
+      background-color: ThreeDFace;
+    }
+  }
+
+  /* Hide the scrollbar but keep scroll behavior */
+  &:local(.hide-scrollbar) {
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Show scrollbar on hover */
+  &:local(.hover-scrollbar) {
+    overflow-y: auto;
+    scrollbar-color: transparent transparent;
+
+    &:hover {
+      scrollbar-color: revert;
+    }
+
+    &:not(:hover) {
+      &:not(:local(.thin-scrollbar))::-webkit-scrollbar {
+        width: auto;
+        height: auto;
+      }
+
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+    }
+  }
+
+  /* Use the classic menu styles */
+  &:local(.classic-styles) > nav > ul > li > a {
+    position: relative;
+    padding: 6px 8px 8px;
+    color: var(--ic-brand-font-color-dark);
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      text-decoration: none !important;
+      background-color: #f5f5f5;
+    }
+
+    &.active {
+      padding-left: 8px;
+      border-left: none;
+      border-radius: 3px;
+      color: white;
+      background-color: var(--ic-brand-primary);
+    }
+
+    &.active:hover {
+      background-color: var(--ic-brand-primary-darkened-5);
+    }
+
+    & > .nav-icon {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      height: 16px;
+      min-width: unset;
+      transform: translateY(-50%);
+      padding: unset;
+      border-radius: unset;
+      background: unset;
+      color: unset;
+    }
+  }
+}
