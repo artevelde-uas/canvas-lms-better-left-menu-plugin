@@ -60,4 +60,22 @@ export default async function ({
     }, {
         filter: 'course-menu-expanded'
     });
+    
+    // Put the tooltips on the right hand side of the menu
+    dom.onElementAdded('[data-tooltip]', link => {
+        const title = link.getAttribute('title');
+        const icon = link.querySelector('i.icon-off');
+        
+        // Remove the tooltip from the link
+        link.removeAttribute('data-tooltip');
+        link.removeAttribute('title');
+    
+        icon.setAttribute('title', title);
+    
+        // Add a tooltip on the icon
+        jQuery(icon).tooltip({
+            position: { my: 'left+24', at: 'right' },
+            tooltipClass: 'left middle horizontal'
+        });
+    }, { root: stickyContainer });
 }
