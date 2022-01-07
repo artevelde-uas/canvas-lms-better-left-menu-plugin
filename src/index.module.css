@@ -56,7 +56,7 @@
   /* Use the classic menu styles */
   &:local(.classic-styles) > nav > ul > li > a {
     position: relative;
-    padding: 6px 8px 8px;
+    padding: 8px 6px;
     color: var(--ic-brand-font-color-dark);
     transition: background-color 0.2s ease-in-out;
 
