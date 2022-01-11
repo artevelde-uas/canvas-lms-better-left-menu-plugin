@@ -3,14 +3,13 @@ import { dom } from '@artevelde-uas/canvas-lms-app';
 import styles from './index.module.css';
 
 
-export default async function ({
+export default function ({
     showScrollbar = true,
     thinScrollbar = false,
     classicStyles = false,
     resetOnScroll = false
 }) {
-    const stickyContainer = await dom.onElementReady('#sticky-container');
-
+    dom.onElementReady('#sticky-container').then(stickyContainer => {
     // Use a thin scrollbar
     if (thinScrollbar) {
         stickyContainer.classList.add(styles.thinScrollbar);
@@ -78,4 +77,5 @@ export default async function ({
             tooltipClass: 'left middle horizontal'
         });
     }, { root: stickyContainer });
+    });
 }
