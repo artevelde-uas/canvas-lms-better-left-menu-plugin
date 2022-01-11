@@ -1,0 +1,26 @@
+{
+    "en": {
+        "package": {
+            "title": "Improved left menu",
+            "description": "Provides several options to change the behavior of the left menu (e.g., a thinner scrollbar, classic menu style, hide the scrollbar, ...). Also fixes a minor issue with the scrollbar."
+        }
+    },
+    "nl": {
+        "package": {
+            "title": "Verbeterd linkermenu",
+            "description": "Biedt verschillende opties om het gedrag van het linkermenu te wijzigen (bijvoorbeeld een dunnere schuifbalk, klassieke menustijl, de schuifbalk verbergen, ...). Lost ook een klein probleem op met de schuifbalk."
+        }
+    },
+    "fr": {
+        "package": {
+            "title": "Menu de gauche amélioré",
+            "description": "Fournit plusieurs options pour modifier le comportement du menu de gauche (par exemple, une barre de défilement plus fine, le style de menu classique, masquer la barre de défilement, ...). Corrige également un problème mineur avec la barre de défilement."
+        }
+    },
+    "de": {
+        "package": {
+            "title": "Verbessertes linkes Menü",
+            "description": "Bietet mehrere Optionen, um das Verhalten des linken Menüs zu ändern (z. B. eine dünnere Bildlaufleiste, klassischer Menüstil, Bildlaufleiste ausblenden, ...). Behebt auch ein kleines Problem mit der Bildlaufleiste."
+        }
+    }
+}
