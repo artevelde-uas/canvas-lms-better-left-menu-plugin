@@ -1,6 +1,6 @@
 {
   "name": "@artevelde-uas/canvas-lms-better-left-menu-plugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Adds several options to improve the left menu",
   "keywords": [
     "Canvas LMS"
@@ -16,7 +16,7 @@
     "src/"
   ],
   "peerDependencies": {
-    "@artevelde-uas/canvas-lms-app": "^1.6.0"
+    "@artevelde-uas/canvas-lms-app": "^1.9.0"
   },
   "config": {
     "scope": {
