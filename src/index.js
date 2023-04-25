@@ -1,6 +1,6 @@
 import { dom } from '@artevelde-uas/canvas-lms-app';
 
-import __ from './i18n';
+import t from './i18n';
 import styles from './index.module.css';
 
 
@@ -82,7 +82,7 @@ export default function ({
 
     return {
         ...require('../package.json'),
-        title: __('package.title'),
-        description: __('package.description')
+        title: t('package.title'),
+        description: t('package.description')
     };
 }
